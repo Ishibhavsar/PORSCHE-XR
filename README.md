@@ -30,35 +30,3 @@ PORSCHE-XR/
 ├── README.md
 └── .gitignore
 
-🚀 Getting Started
-Clone the repository, install dependencies, and run the project locally using the following commands:
-git clone https://github.com/Ishibhavsar/PORSCHE-XR.git
-cd PORSCHE-XR
-npm install
-npm start
-The application will be available at http://localhost:3000
-
-📦 Production Build
-To create an optimized production build, run:
-npm run build
-The build output will be generated in the build/ directory and is ready for deployment.
-
-🌐 Deployment
-This project is deployed as a static site on Vercel. You can deploy it using Git integration by importing the repository into Vercel, or deploy manually using the Vercel CLI after creating a production build.
-npm run build
-npx vercel --prod
-
-⚙️ AR Hosting Notes
-All AR assets are stored in the /public/models directory. Proper MIME types are required for AR compatibility, with .glb served as model/gltf-binary and .usdz served as model/vnd.usdz+zip. These headers are configured using vercel.json to ensure compatibility with mobile AR viewers.
-
-📱 Usage Notes
-For best results, access the application over HTTPS, ensure QR codes point to the deployed site instead of localhost, and use a mobile device to experience AR features.
-
-📚 Learn More
-React: https://react.dev
-Create React App: https://create-react-app.dev
-Vercel: https://vercel.com/docs
-
-👤 Author
-Ishi Bhavsar
-GitHub: https://github.com/Ishibhavsar
