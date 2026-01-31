@@ -110,5 +110,3 @@ These headers are configured using `vercel.json` to ensure compatibility with mo
 
 **Ishi Bhavsar**
 GitHub: [https://github.com/Ishibhavsar](https://github.com/Ishibhavsar)
-
-```
