@@ -112,9 +112,3 @@ These headers are configured using `vercel.json` to ensure compatibility with mo
 GitHub: [https://github.com/Ishibhavsar](https://github.com/Ishibhavsar)
 
 ```
-- **No broken formatting**
-- **GitHub-safe**
-- **Portfolio-ready**
-
-If you want badges, screenshots, or a live demo link added next, I’ve got you 👌
-```
