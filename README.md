@@ -1,145 +1,64 @@
-# Getting Started with Create React App
+# 🚗 PORSCHE-XR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PORSCHE-XR is a web-based Extended Reality (XR) project built using React that allows users to explore Porsche car models in an interactive 3D and AR-ready environment directly from the browser. The application supports GLB and USDZ models, making it compatible with mobile AR viewers such as iOS Quick Look and Android Scene Viewer. The project is optimized for performance, mobile responsiveness, and modern browsers, and is deployed as a static site on Vercel.
 
-## Available Scripts
+The application is built with React using Create React App and uses JavaScript, HTML5, and CSS3 for the frontend. AR and 3D assets are handled using GLB and USDZ formats, which are hosted in the public directory to ensure direct access by AR viewers. The project follows a clean and modular structure to make development, maintenance, and deployment simple.
 
-In the project directory, you can run:
+### ✨ Features
+- Interactive 3D Porsche car visualization
+- AR-ready models with GLB and USDZ support
+- Web-based XR experience without app installation
+- Mobile-friendly and optimized for AR devices
+- Fast and optimized production build
+- Static deployment on Vercel
 
-### `npm start`
+### 🛠 Tech Stack
+React (Create React App), JavaScript, HTML5, CSS3, GLB/USDZ 3D models, npm, and Vercel for deployment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📂 Project Structure
+```bash
+PORSCHE-XR/
+├── public/
+│   ├── models/        # AR 3D models (.glb, .usdz)
+│   └── index.html
+├── src/
+│   ├── components/
+│   ├── App.js
+│   └── index.js
+├── vercel.json        # MIME headers for AR models
+├── package.json
+├── README.md
+└── .gitignore
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🚀 Getting Started
+Clone the repository, install dependencies, and run the project locally using the following commands:
+git clone https://github.com/Ishibhavsar/PORSCHE-XR.git
+cd PORSCHE-XR
+npm install
+npm start
+The application will be available at http://localhost:3000
 
-### `npm test`
+📦 Production Build
+To create an optimized production build, run:
+npm run build
+The build output will be generated in the build/ directory and is ready for deployment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-## Deploying to Vercel (quick)
-
-You can deploy this Create React App to Vercel as a static site. Vercel will run `npm run build` and serve the contents of the `build/` folder.
-
-Two common ways:
-
-- Git integration (recommended for continuous deploys):
-  1. Push your repository to GitHub/GitLab/Bitbucket.
- 2. Sign in to https://vercel.com and import the repository.
- 3. Vercel detects Create React App and uses `npm run build`. Deploy.
-
-- CLI (quick one-off deploy):
-  1. Install the Vercel CLI (optional):
-	  ```powershell
-	  npm i -g vercel
-	  # or use npx
-	  npx vercel login
-	  ```
-  2. From the project root run:
-	  ```powershell
-	  npm run build
-	  npx vercel --prod
-	  ```
-
-Notes specific to AR models in `/public/models`:
-- Some clients (Quick Look / Scene Viewer) depend on Content-Type headers for .usdz and .glb. To ensure Vercel serves correct MIME types we've added a `vercel.json` that sets headers for these assets. If you use a different host, please ensure `.usdz` is served with a suitable Content-Type (for example `model/vnd.usdz+zip`) and `.glb` as `model/gltf-binary`.
-
-Troubleshooting:
-- If a phone shows "site can't be reached" after scanning a QR, ensure the QR points to the deployed HTTPS URL (not `localhost`).
-- For iOS Quick Look prefer an HTTPS URL.
-
-Automatic / CI deploy (recommended)
-
-If you want a hands-off deploy triggered on every push to `main`, add a Vercel token to the repository secrets and the included GitHub Actions workflow will deploy automatically.
-
-1. Create a Vercel token: https://vercel.com/account/tokens
-2. In your GitHub repository settings, add a secret named `VERCEL_TOKEN` with that token.
-3. Push your code to `main` — the workflow in `.github/workflows/deploy-vercel.yml` will run and deploy to Vercel.
-
-Local non-interactive deploy script
-
-If you prefer to deploy from your machine non-interactively, set `VERCEL_TOKEN` in your PowerShell environment and run the helper script:
-
-```powershell
-$env:VERCEL_TOKEN='PASTE_YOUR_TOKEN_HERE'
-.\scripts\deploy-vercel.ps1
-```
-
-Interactive one-off deploy
-
-Alternatively run with npx (interactive login):
-
-```powershell
+🌐 Deployment
+This project is deployed as a static site on Vercel. You can deploy it using Git integration by importing the repository into Vercel, or deploy manually using the Vercel CLI after creating a production build.
+npm run build
 npx vercel --prod
-```
 
-Verification (after deploy)
+⚙️ AR Hosting Notes
+All AR assets are stored in the /public/models directory. Proper MIME types are required for AR compatibility, with .glb served as model/gltf-binary and .usdz served as model/vnd.usdz+zip. These headers are configured using vercel.json to ensure compatibility with mobile AR viewers.
 
-Replace `example.com` below with your deployed domain and run these PowerShell commands to verify the AR page and asset headers:
+📱 Usage Notes
+For best results, access the application over HTTPS, ensure QR codes point to the deployed site instead of localhost, and use a mobile device to experience AR features.
 
-```powershell
-# save AR page HTML
-Invoke-WebRequest -UseBasicParsing 'https://example.com/#/ar' -OutFile page.html
+📚 Learn More
+React: https://react.dev
+Create React App: https://create-react-app.dev
+Vercel: https://vercel.com/docs
 
-# check GLB headers
-Invoke-WebRequest -Method Head -UseBasicParsing 'https://example.com/models/porsche.glb'
-
-# check USDZ headers
-Invoke-WebRequest -Method Head -UseBasicParsing 'https://example.com/models/porsche.usdz'
-```
-
-If anything returns 404 or the Content-Type is incorrect, paste the results here and I'll provide the exact fix for the hosting configuration or update `vercel.json` accordingly.
-
-If you'd like, I can also prepare a CI workflow that deploys only when you add a `VERCEL_PROJECT_ID` and `VERCEL_ORG_ID` so the deploy is linked to an existing Vercel project (optional).
+👤 Author
+Ishi Bhavsar
+GitHub: https://github.com/Ishibhavsar
